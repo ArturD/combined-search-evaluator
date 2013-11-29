@@ -1,4 +1,8 @@
 Evaluator::Application.routes.draw do
+  resources :runs
+
+  resources :phrases
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
