@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  page_id: 1
+  phrase_id: 1
+  score: 1.5
+  comment: MyText
+  who: MyString
+
+two:
+  page_id: 1
+  phrase_id: 1
+  score: 1.5
+  comment: MyText
+  who: MyString
