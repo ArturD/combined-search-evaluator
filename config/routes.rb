@@ -1,4 +1,6 @@
 Evaluator::Application.routes.draw do
+  resources :pages
+
   resources :queries
 
   resources :runs
