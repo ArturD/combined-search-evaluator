@@ -6,15 +6,35 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:root_url) %>:</strong></dt>
   <dd><%= @run.root_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:desription) %>:</strong></dt>
-  <dd><%= @run.desription %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:score) %>:</strong></dt>
+  <dd><%= @run.score %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd> <%= @run.description %></dd>
 </dl>
-
+<h4>query breakedown:</h4>
+<ul>
+  <% @run.queries.each do |query| %>
+  <li>
+    <strong>
+      <%= query.phrase.text %>:
+    </strong>
+    <span>
+      <%= query.score %>
+    </span>
+    <ul>
+      <% query.query_results.each do |query_result| %>
+        <li>
+          <strong><%= query_result.result.page.url %></strong>
+          <span><%= query_result.result.score %></span>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+  <% end %>
+</ul>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               runs_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_run_path(@run), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               run_path(@run),
               :method => 'delete',

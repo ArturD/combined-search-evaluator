@@ -1,4 +1,6 @@
 Evaluator::Application.routes.draw do
+  resources :query_results
+
   resources :results
 
   resources :pages

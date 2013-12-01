@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:root_url) %></th>
-      <th><%= model_class.human_attribute_name(:desription) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,11 +17,11 @@
       <tr>
         <td><%= link_to run.id, run_path(run) %></td>
         <td><%= run.root_url %></td>
-        <td><%= run.desription %></td>
+        <td><%= run.description %></td>
         <td><%=l run.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_run_path(run), :class => 'btn btn-mini' %>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      run_path(run), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       run_path(run),
                       :method => :delete,

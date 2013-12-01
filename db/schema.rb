@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129155621) do
+ActiveRecord::Schema.define(version: 20131129162126) do
 
   create_table "pages", force: true do |t|
     t.integer  "wiki_id"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20131129155621) do
     t.integer  "phrase_id"
   end
 
+  create_table "query_results", force: true do |t|
+    t.integer  "query_id"
+    t.integer  "page_id"
+    t.integer  "result_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "results", force: true do |t|
     t.integer  "page_id"
     t.integer  "phrase_id"
@@ -51,7 +60,7 @@ ActiveRecord::Schema.define(version: 20131129155621) do
 
   create_table "runs", force: true do |t|
     t.string   "root_url"
-    t.text     "desription"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

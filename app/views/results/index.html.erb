@@ -19,9 +19,19 @@
     <% @results.each do |result| %>
       <tr>
         <td><%= link_to result.id, result_path(result) %></td>
-        <td><%= result.page_id %></td>
-        <td><%= result.phrase_id %></td>
-        <td><%= result.score %></td>
+        <td><%= result.page.url %></td>
+        <td><%= result.phrase.text %></td>
+        <td><input type="text"
+                   class="span2 score-slider"
+                   data-slider-min="-1"
+                   data-update-url="<%= result_path(result) %>"
+                   data-update-attribute="result[score]"
+                   data-slider-max="1"
+                   data-slider-step="0.2"
+                   data-slider-value="<%= result.score %>"
+                   data-slider-selection="after"
+                   data-slider-tooltip="show"
+                   value="<%= result.score %>" /></td>
         <td><%= result.comment %></td>
         <td><%= result.who %></td>
         <td><%=l result.created_at %></td>

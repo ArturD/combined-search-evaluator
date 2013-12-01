@@ -2,8 +2,8 @@
 
 one:
   root_url: MyString
-  desription: MyText
+  description: MyText
 
 two:
   root_url: MyString
-  desription: MyText
+  description: MyText

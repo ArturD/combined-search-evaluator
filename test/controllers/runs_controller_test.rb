@@ -18,7 +18,7 @@ class RunsControllerTest < ActionController::TestCase
 
   test "should create run" do
     assert_difference('Run.count') do
-      post :create, run: { desription: @run.desription, root_url: @run.root_url }
+      post :create, run: { description: @run.description, root_url: @run.root_url }
     end
 
     assert_redirected_to run_path(assigns(:run))
@@ -35,7 +35,7 @@ class RunsControllerTest < ActionController::TestCase
   end
 
   test "should update run" do
-    patch :update, id: @run, run: { desription: @run.desription, root_url: @run.root_url }
+    patch :update, id: @run, run: { description: @run.description, root_url: @run.root_url }
     assert_redirected_to run_path(assigns(:run))
   end
 

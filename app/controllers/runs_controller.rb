@@ -24,7 +24,7 @@ class RunsController < ApplicationController
   # POST /runs
   # POST /runs.json
   def create
-    @run = Run.new(run_params)
+    @run = Run.do(run_params[:root_url], run_params[:description])
 
     respond_to do |format|
       if @run.save
@@ -69,6 +69,6 @@ class RunsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def run_params
-      params.require(:run).permit(:root_url, :desription)
+      params.require(:run).permit(:root_url, :description)
     end
 end
