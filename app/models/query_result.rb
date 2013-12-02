@@ -4,6 +4,6 @@ class QueryResult < ActiveRecord::Base
   belongs_to :query
 
   def score
-    (2**-position) * (result.score or 0)
+    (2**-position) * (result.score or 0) * (result.phrase.weight)
   end
 end

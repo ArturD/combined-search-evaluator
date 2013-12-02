@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129162126) do
+ActiveRecord::Schema.define(version: 20131201175606) do
 
   create_table "pages", force: true do |t|
     t.integer  "wiki_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20131129162126) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "weight",      default: 1.0
   end
 
   create_table "queries", force: true do |t|
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 20131129162126) do
   create_table "results", force: true do |t|
     t.integer  "page_id"
     t.integer  "phrase_id"
-    t.float    "score"
+    t.float    "score",      default: 0.0, null: false
     t.text     "comment"
     t.string   "who"
     t.datetime "created_at"

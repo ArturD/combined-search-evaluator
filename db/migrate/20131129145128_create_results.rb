@@ -3,7 +3,7 @@ class CreateResults < ActiveRecord::Migration
     create_table :results do |t|
       t.integer :page_id
       t.integer :phrase_id
-      t.float :score
+      t.float :score, default: 0, null: false
       t.text :comment
       t.string :who
 

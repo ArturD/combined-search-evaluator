@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:text) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:weight) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -18,6 +19,7 @@
         <td><%= link_to phrase.id, phrase_path(phrase) %></td>
         <td><%= phrase.text %></td>
         <td><%= phrase.description %></td>
+        <td><%= phrase.weight %></td>
         <td><%=l phrase.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
