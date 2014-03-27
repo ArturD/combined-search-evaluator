@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:page_id) %></th>
+      <th style="width:200px"><%= model_class.human_attribute_name(:page_id) %></th>
       <th><%= model_class.human_attribute_name(:phrase_id) %></th>
       <th><%= model_class.human_attribute_name(:score) %></th>
       <th><%= model_class.human_attribute_name(:comment) %></th>
@@ -19,7 +19,9 @@
     <% @results.each do |result| %>
       <tr>
         <td><%= link_to result.id, result_path(result) %></td>
-        <td><%= result.page.url %></td>
+        <td >
+          <a style="display:block; width:200px;overflow:hidden;overflow-wrap: break-word;" href="<%= result.page.url %>" target="_blank"><%= result.page.url %></a>
+        </td>
         <td><%= result.phrase.text %></td>
         <td><input type="text"
                    class="span2 score-slider"
